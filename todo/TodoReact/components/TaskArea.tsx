@@ -2,18 +2,18 @@ import React, { Key } from 'react';
 import Task from './Task';
 import '../styles/TaskArea.css';
 
-const TaskArea = () =>{ 
-    type taskType = {
-        taskData?:String,
-        taskDate?:String,
-        taskStatus:Number
-    }
-    const tasks:taskType[] = [
-        {taskData:"AMIT",taskStatus:0},
-        {taskData:"sadas",taskStatus:1},
-        {taskData:"AMsdfdsIT",taskStatus:0},
-        {taskData:"AMsdfsdfdsfIT",taskStatus:1}
-    ]
+type taskType = {
+    taskData?:String,
+    taskDate?:String,
+    taskStatus:Number
+}
+
+type propsType = {
+    tasks:taskType[]
+}
+
+const TaskArea = (props:propsType) =>{ 
+    const tasks:taskType[] = props.tasks;
 
     return(
         <div className='text-area'>
