@@ -2,12 +2,16 @@ import React from 'react';
 import { useRef } from 'react';
 import '../styles/AddTaskArea.css';
 
-const AddTaskArea = () =>{
+type propsType ={
+    addTask:any
+}
+
+const AddTaskArea = (props:propsType) =>{
     let taskInput = useRef<HTMLInputElement>(null);
 
     const addBtnFunc = () =>{
         if(taskInput.current!.value != ""){
-            console.log(taskInput.current!.value);
+            props.addTask(taskInput.current?.value);
             taskInput.current!.value = "";
         }
     }
