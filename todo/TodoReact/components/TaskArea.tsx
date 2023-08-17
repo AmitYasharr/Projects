@@ -1,6 +1,7 @@
-import React, { Key } from 'react';
+// import React, { Key } from 'react';
 import Task from './Task';
 import '../styles/TaskArea.css';
+import { Key, useEffect } from 'react';
 
 type taskType = {
     taskData?:String,
@@ -9,7 +10,8 @@ type taskType = {
 }
 
 type propsType = {
-    tasks:taskType[]
+    tasks:taskType[],
+    changeTask:any;
 }
 
 const TaskArea = (props:propsType) =>{ 
@@ -23,6 +25,9 @@ const TaskArea = (props:propsType) =>{
                     taskData={task.taskData}
                     taskStatus={task.taskStatus}
                     key={index}
+                    changeTask={
+                        props.changeTask
+                    }
                 >
                 </Task>
             ))}
