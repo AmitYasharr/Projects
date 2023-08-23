@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [tasks,setTasks] = useState([{id:0,taskData:"Amit",taskStatus:0}]);
+  const [tasks,setTasks] = useState<{id:number,taskData:string,taskStatus:number}[]>([]);
   const [filterdTasks,setFilterdTasks] = useState(tasks);
   const [mode,setMode] = useState(0);
 
@@ -33,7 +33,9 @@ function App() {
 
   const addTask = (data:string) => {
     const updateTasks = [...tasks];
-    updateTasks.push({id:updateTasks[updateTasks.length-1].id+1,taskData:data,taskStatus:0})
+    console.log(updateTasks);
+    const taskId = (updateTasks.length==0? 0:updateTasks[updateTasks.length-1].id+1)
+    updateTasks.push({id:taskId,taskData:data,taskStatus:0})
     setTasks(updateTasks);
     setFilterdTasks(updateTasks);
   }
@@ -47,7 +49,7 @@ function App() {
       <h1>Todo</h1>
       <AddTasksArea addTask={addTask}></AddTasksArea>
       <NavBar changeMode={changeMode}></NavBar>
-      <TaskArea tasks={filterdTasks} changeTask={changeTask}></TaskArea>
+      {tasks.length==0? <>No tasks yet...</>:<TaskArea tasks={filterdTasks} changeTask={changeTask}></TaskArea>}
     </>
   )
 }

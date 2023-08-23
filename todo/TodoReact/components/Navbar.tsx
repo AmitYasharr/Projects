@@ -13,7 +13,7 @@ const Navbar = (props:propsType) =>{
         <nav>
             <ul className='list-titles'>
                 <li className={`all${mode==0? " selcted":""}`} onClick={()=>{setMode(0);props.changeMode(0)}}>All</li>
-                <li className={`uncomplite${mode==1? " selcted":""}`} onClick={()=>{setMode(1);props.changeMode(1)}}>Uncomplite</li>
+                <li className={`uncomplite${mode==1? " selcted":""}`} onClick={()=>{setMode(1);props.changeMode(1)}}>Uncomplited</li>
                 <li className={`complited${mode==2? " selcted":""}`} onClick={()=>{setMode(2);props.changeMode(2)}}>Complited</li>
             </ul>
         </nav>
