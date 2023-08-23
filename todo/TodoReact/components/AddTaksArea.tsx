@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import '../styles/AddTaskArea.css';
 
 type propsType ={
-    addTask:any
+    addTask:any,                                  
 }
 
 const AddTaskArea = (props:propsType) =>{

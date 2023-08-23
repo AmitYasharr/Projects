@@ -1,3 +1,5 @@
+"use client"
+
 import NavBar from '../components/Navbar';
 import AddTasksArea from '../components/AddTaksArea';
 import TaskArea from '../components/TaskArea';
@@ -36,7 +38,6 @@ function App() {
 
   const addTask = (data:string) => {
     const updateTasks = [...tasks];
-    console.log(updateTasks);
     const taskId = (updateTasks.length==0? 0:updateTasks[updateTasks.length-1].id+1)
     updateTasks.push({id:taskId,taskData:data,taskStatus:0})
     setTasks(updateTasks);
@@ -46,14 +47,28 @@ function App() {
   const changeMode = (aMode:number) =>{
     setMode(aMode);
   }
+
+  const deleteTask = (taskID:number) =>{
+    const updateTasks = [...tasks];
+    updateTasks.splice(taskID,1);
+    setFilterdTasks(updateTasks);
+    setTasks(updateTasks);
+  }
+
+  const deleteAllTasks = () =>{
+    const oldTasks = [...tasks];
+    const newTasks = oldTasks.filter((task)=>{return(task.taskStatus<1)});
+    setFilterdTasks([])
+    setTasks(newTasks);
+  }
   
   return (
     <>
       <h1>Todo</h1>
       <AddTasksArea addTask={addTask}></AddTasksArea>
       <NavBar changeMode={changeMode}></NavBar>
-      {filterdTasks.length==0? <h4 style={{color:"#aaa", fontWeight:400, padding:"20px"}}>No tasks yet...</h4>:<TaskArea tasks={filterdTasks} changeTask={changeTask}></TaskArea>}
-      {mode==2? <DeleteAllBtn></DeleteAllBtn> :<></>}
+      {filterdTasks.length==0? <h4 style={{color:"#aaa", fontWeight:400, padding:"20px"}}>No tasks yet...</h4>:<TaskArea tasks={filterdTasks} changeTask={changeTask} deleteTask={deleteTask}></TaskArea>}
+      {mode==2 && filterdTasks.length!=0? <DeleteAllBtn deleteAllTasks={deleteAllTasks}></DeleteAllBtn> :<></>}
     </>
   )
 }

@@ -1,8 +1,12 @@
 import '../styles/DeleteAllBtn.css';
 
-const DeleteAllBtn = () =>{
+type propsType={
+    deleteAllTasks:any;
+}
+
+const DeleteAllBtn = (props:propsType) =>{
     return(
-        <button className='delete-all-btn'>
+        <button className='delete-all-btn' onClick={()=>{props.deleteAllTasks()}}>
             Delete all
         </button>
     )

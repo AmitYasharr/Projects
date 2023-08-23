@@ -12,6 +12,7 @@ type taskType = {
 type propsType = {
     tasks:taskType[],
     changeTask:any;
+    deleteTask:any
 }
 
 const TaskArea = (props:propsType) =>{ 
@@ -25,9 +26,8 @@ const TaskArea = (props:propsType) =>{
                     taskData={task.taskData}
                     taskStatus={task.taskStatus}
                     key={index}
-                    changeTask={
-                        props.changeTask
-                    }
+                    changeTask={props.changeTask}
+                    deleteTask={props.deleteTask}
                 >
                 </Task>
             ))}
