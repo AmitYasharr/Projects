@@ -1,0 +1,26 @@
+.delete-all-btn{
+    background-color: rgb(255, 82, 82);
+    color: white;
+    width: -webkit-fill-available;
+    border-radius: 0.3em;
+    border: 2px solid transparent;
+    padding: 10px 0px;
+    margin: 15px 0px;
+    animation: popin 0.2s ease-in-out forwards;
+    transition: 0.1s all ease-in-out;
+}
+.delete-all-btn:hover{
+    background-color: white;
+    color:rgb(255, 82, 82);
+    border: 2px solid rgb(255, 82, 82);
+    font-weight: 600;
+}
+
+@keyframes popin{
+    0%{opacity: 0%;
+        transform: translateY(5px);}
+    100%{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}

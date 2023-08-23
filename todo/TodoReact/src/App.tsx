@@ -1,7 +1,10 @@
 import NavBar from '../components/Navbar';
-import AddTasksArea from '../components/AddTaksArea'
-import TaskArea from '../components/TaskArea'
+import AddTasksArea from '../components/AddTaksArea';
+import TaskArea from '../components/TaskArea';
+import DeleteAllBtn from '../components/DeleteAllBtn';
+
 import '../styles/App.css';
+
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -49,7 +52,8 @@ function App() {
       <h1>Todo</h1>
       <AddTasksArea addTask={addTask}></AddTasksArea>
       <NavBar changeMode={changeMode}></NavBar>
-      {tasks.length==0? <>No tasks yet...</>:<TaskArea tasks={filterdTasks} changeTask={changeTask}></TaskArea>}
+      {filterdTasks.length==0? <h4 style={{color:"#aaa", fontWeight:400, padding:"20px"}}>No tasks yet...</h4>:<TaskArea tasks={filterdTasks} changeTask={changeTask}></TaskArea>}
+      {mode==2? <DeleteAllBtn></DeleteAllBtn> :<></>}
     </>
   )
 }
