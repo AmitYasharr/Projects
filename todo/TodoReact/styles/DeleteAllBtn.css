@@ -1,7 +1,7 @@
 .delete-all-btn{
     background-color: rgb(255, 82, 82);
     color: white;
-    width: -webkit-fill-available;
+    width: 80%;
     border-radius: 0.3em;
     border: 2px solid transparent;
     padding: 10px 0px;

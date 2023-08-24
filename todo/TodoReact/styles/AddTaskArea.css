@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+    margin: 10px 0px;
+    width: 80%;
 }
 .add-text-area > button{
     border: 2px solid transparent;
@@ -22,5 +24,5 @@
 .add-text-area > input{
     height: 100%;
     width: -webkit-fill-available;
-    padding: 5px 10px;
+    padding: 0px 10px;
 }

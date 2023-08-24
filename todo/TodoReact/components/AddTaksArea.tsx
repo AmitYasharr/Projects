@@ -9,6 +9,7 @@ const AddTaskArea = (props:propsType) =>{
     let taskInput = useRef<HTMLInputElement>(null);
 
     const addBtnFunc = () =>{
+        console.log("clicked");
         if(taskInput.current!.value != ""){
             props.addTask(taskInput.current?.value);
             taskInput.current!.value = "";
@@ -19,8 +20,8 @@ const AddTaskArea = (props:propsType) =>{
         <span  className='add-text-area'>
             <input placeholder="Add task..." ref={taskInput} onKeyUp={(key)=>{
                 if(key.code == 'Enter'){addBtnFunc()}
-            }}></input>
-            <button onClick={addBtnFunc}>Add</button>
+            }} maxLength={30}></input>
+            <button onClick={()=>{addBtnFunc()}}>Add</button>
         </span>
     )
 }

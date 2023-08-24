@@ -5,4 +5,25 @@
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    height: max-content;
+    max-height: 50vh;
+    width: clamp(20px,500px,1000px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.text-area::-webkit-scrollbar{
+    width: 20px;
+    margin: 0.1em;
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+}
+.text-area::-webkit-scrollbar-thumb{
+    background: #00000026;
+    border-radius: 100px;
+    border:8px solid transparent;
+    background-clip: content-box;
+}
+.text-area::-webkit-scrollbar-thumb:hover{
+    background: #0000004d;
+    background-clip: content-box;
 }
