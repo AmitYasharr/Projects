@@ -20,9 +20,24 @@
     color: #000;
     font-weight: 600;
 }
-
 .add-text-area > input{
-    height: 100%;
     width: -webkit-fill-available;
     padding: 0px 10px;
+}
+
+@media screen and (max-width:450px) {
+    .add-text-area{
+        flex-direction: column;
+    }
+    .add-text-area > button{
+        width: 100%;
+    }
+    .add-text-area > input{
+        height: 30px;
+    }
+}
+@media screen and (min-width:450px){
+    .add-text-area > input{
+        height: 100%;
+    }
 }

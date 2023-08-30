@@ -91,13 +91,13 @@ function App() {
   }
   
   return (
-    <>
+    <div className='App'>
       <h1>Todo</h1>
       <AddTasksArea addTask={addTask}></AddTasksArea>
       <NavBar changeMode={changeMode}></NavBar>
       {filterdTasks.length==0? <h4 style={{color:"#aaa", fontWeight:400, padding:"20px",transition:"0.1s ease-in-out"}}>No tasks yet...</h4>:<TaskArea tasks={filterdTasks} changeTask={changeTask} deleteTask={deleteTask}></TaskArea>}
       {mode==2 && filterdTasks.length!=0? <DeleteAllBtn deleteAllTasks={deleteAllTasks}></DeleteAllBtn> :<></>}
-    </>
+    </div>
   )
 }
 

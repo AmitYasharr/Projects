@@ -6,15 +6,15 @@
 }
 .list-titles > li{
     padding: 5px 10px;
-    width: clamp(50px, 6em , 200px);
     -webkit-user-select: none;
+    display: flex;
+    justify-content: center;
     transition: 0.1s ease-in-out;
 }
 .list-titles > li:hover{
     border-radius: 0.3em;
     font-weight: 600;
 }
-
 .selcted{
     background-color: rgb(235, 235, 235);
     border-radius: 0.3em;
